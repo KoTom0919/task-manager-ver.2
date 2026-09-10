@@ -982,3 +982,32 @@ dialog::backdrop {
     max-width: 100%;
   }
 }
+/* =================================
+   スマホ版 datetime-local の横はみ出し修正
+================================= */
+@media (max-width: 700px) {
+
+  /* 入力欄を親要素より大きくしない */
+  .field {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .field input[type="datetime-local"] {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* iPhone Safari対策 */
+  input[type="datetime-local"]::-webkit-date-and-time-value {
+    min-width: 0;
+    text-align: center;
+  }
+}
