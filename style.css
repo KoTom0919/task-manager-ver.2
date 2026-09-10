@@ -1052,3 +1052,52 @@ dialog::backdrop {
     justify-self: center;
   }
 }
+/* =================================
+   スマホ版 入力欄の横幅を統一
+================================= */
+@media (max-width: 700px) {
+
+  /* 各項目をフォーム幅に収める */
+  .form-grid,
+  .form-grid > *,
+  .field {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* 通常の入力欄 */
+  .field > input,
+  .field > select,
+  .field > textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 開始時刻・終了時刻 */
+  .field input[type="datetime-local"] {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* 所要時間 */
+  .duration {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 1fr) 90px;
+  }
+
+  .duration input,
+  .duration select {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
