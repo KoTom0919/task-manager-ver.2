@@ -953,3 +953,32 @@ dialog::backdrop {
   text-align: left;
   white-space: nowrap;
 }
+/* スマホで日付欄が右に膨らむ問題を修正 */
+@media (max-width: 700px) {
+  .period,
+  .filter {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .period > *,
+  .filter > * {
+    min-width: 0;
+  }
+
+  input[type="date"] {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .period label,
+  .filter input {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
