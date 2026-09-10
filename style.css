@@ -1011,3 +1011,44 @@ dialog::backdrop {
     text-align: center;
   }
 }
+/* =================================
+   スマホ版 予定表上部を中央寄せ
+================================= */
+@media (max-width: 700px) {
+
+  .schedule-tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .schedule-tools > button {
+    width: min(100%, 340px);
+  }
+
+  .period {
+    width: min(100%, 340px);
+    margin: 0 auto;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto
+      minmax(0, 1fr);
+
+    justify-content: center;
+  }
+
+  .period label {
+    min-width: 0;
+  }
+
+  .period input[type="date"] {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .period > button {
+    justify-self: center;
+  }
+}
