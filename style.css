@@ -1183,53 +1183,76 @@ input[type="date"] {
   box-sizing: border-box;
   max-width: 100%;
 }
-/* ================================
-   スマホ：～を2つの日付欄の間に配置
-================================ */
+
 @media (max-width: 700px) {
-
-  .period {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    column-gap: 10px;
-    align-items: start;
-    width: 100%;
-  }
-
-  .period-group {
-    min-width: 0;
-  }
-
-  .period-group .field {
-    width: 100%;
-  }
-
-  .period-group .field input[type="date"] {
-    width: 100%;
-    min-width: 0;
-  }
 
   .period-separator {
     grid-column: 2;
     grid-row: 1;
+
     align-self: start;
 
-    /* 「表示開始日」の文字の高さ＋余白分だけ下げる */
-    margin-top: 58px;
+    /* 見出しの下＝日付入力欄の高さに合わせる */
+    margin-top: 38px;
 
-    padding: 0;
-    font-size: 1.3rem;
+    padding: 0 2px;
+    font-size: 1.4rem;
     line-height: 46px;
     text-align: center;
   }
 
-  .period-group:first-child {
-    grid-column: 1;
-    grid-row: 1;
+}
+/* =========================================
+   スマホ：個別設定の日付欄のはみ出し修正
+========================================= */
+@media (max-width: 700px) {
+
+  #specialSettings {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
   }
 
-  .period-group:last-child {
-    grid-column: 3;
-    grid-row: 1;
+  #specialForm {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  #specialForm .field {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  #specialDate {
+    display: block;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    -webkit-appearance: none;
+    appearance: none;
+
+    overflow: hidden;
+  }
+
+  #specialDate::-webkit-date-and-time-value {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+  }
+
+  .settings-box {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }
