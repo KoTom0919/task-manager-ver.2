@@ -120,27 +120,34 @@
           設定
         </button>
 
-        <div class="period">
-          <label class="field">
-            <span>表示開始日</span>
-            <input id="viewStart" type="date">
-          </label>
+<div class="period">
 
-          <span>～</span>
+  <div class="period-group">
+    <label class="field">
+      <span>表示開始日</span>
+      <input id="viewStart" type="date">
+    </label>
 
-          <label class="field">
-            <span>表示終了日</span>
-            <input id="viewEnd" type="date">
-          </label>
+    <button id="today" class="today" type="button">
+      今日
+    </button>
+  </div>
 
-          <button id="today" class="today" type="button">
-            今日
-          </button>
+  <span class="period-separator">～</span>
 
-          <button id="showAll" class="secondary" type="button">
-            すべて表示
-          </button>
-        </div>
+  <div class="period-group">
+    <label class="field">
+      <span>表示終了日</span>
+      <input id="viewEnd" type="date">
+    </label>
+
+    <button id="showAll" class="secondary" type="button">
+      表示
+    </button>
+  </div>
+
+</div>
+
       </div>
 
       <div class="panel">
