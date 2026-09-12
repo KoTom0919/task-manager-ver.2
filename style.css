@@ -1256,3 +1256,49 @@ input[type="date"] {
     overflow-y: auto;
   }
 }
+/* =========================================
+   スマホ：時間枠設定の時刻欄を枠内に収める
+========================================= */
+@media (max-width: 700px) {
+
+  /* 開始時刻・終了時刻を囲む薄緑の枠 */
+  .setting-time-grid {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 中の各項目 */
+  .setting-time-grid .field {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 開始時刻・終了時刻・休憩時刻 */
+  .setting-time-grid input[type="time"] {
+    display: block;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* iPhone Safari対策 */
+  .setting-time-grid input[type="time"]::-webkit-date-and-time-value {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+  }
+
+}
